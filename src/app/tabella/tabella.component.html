@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Età</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of listaUtenti">
+        <tr>
+            <td >{{item.nome}}</td>
+            <td>{{item.cognome}}</td>
+            <td>{{item.eta}}</td>
+            <td>{{item.email}}</td>
+            <td><app-pass [eta]="item.eta"></app-pass></td>
+        </tr>
+    
+    </tbody>
+</table>

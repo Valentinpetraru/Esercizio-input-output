@@ -1,0 +1,19 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { forkJoin, Observable } from 'rxjs';
+import { User } from './user';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProvaService {
+
+  apiUrl = 'https://jsonplaceholder.typicode.com/users'
+
+  constructor(private http:HttpClient) {}
+
+  getUser(): Observable<User>{
+    return this.http.get<User>(this.apiUrl)
+  }
+}
